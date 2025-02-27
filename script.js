@@ -29,7 +29,7 @@ function updateStep(direction) {
     para.innerText = step.text;
     btn_previous.style.color = step.btn_prev;
     btn_next.style.color = step.btn_next;
-    btn_next.innerText = step.btn_next_text == 'undefine' ? "Next" : step.btn_next_text;
+    btn_next.innerText = step.btn_next_text === undefined ? "Next" : step.btn_next_text;
 
     circles.forEach((circle, index) => {
         if (index < position) {
@@ -45,5 +45,6 @@ function updateStep(direction) {
 
     div_elements.forEach((div, index) => {
         div.style.backgroundColor = index < position ? "green" : "black";
+        div.classList.add('transform-slow')
     });
 }
